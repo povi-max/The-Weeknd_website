@@ -1,4 +1,4 @@
- * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -152,7 +152,7 @@
         .section-title {
             text-align: center;
             font-size: 3rem;
-            color: #171616;
+            color: #E4BD15;
             margin-bottom: 50px;
             font-weight: bold;
         }
@@ -161,14 +161,14 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(5, 1fr);
-            gap: 8px;
+            gap: 20px;
             height: 100%;
         }
 
         .grid-item {
             background-color: #2a2a2a;
             border-radius: 8px;
-            padding: 20px;
+            padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -184,7 +184,7 @@
         }
 
         .grid-item h3 {
-            color: ##171616;
+            color: #E4BD15;
             margin-bottom: 10px;
             font-size: 1.2rem;
         }
@@ -196,7 +196,7 @@
         }
 
         .grid-item.stats {
-            background-color: #171616;
+            background-color: #D51135;
         }
 
         .grid-item.stats h3 {
@@ -209,7 +209,7 @@
         }
 
         .grid-item.biography {
-            background-color: #171616;
+            background-color: #E4BD15;
             color: #171616;
         }
 
@@ -229,6 +229,107 @@
         .grid-item.quote p {
             color: white;
             font-size: 1rem;
+        }
+
+        .grid-item.image-gallery {
+            background-color: #3a3a3a;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-item.image-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .grid-item.image-gallery::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(228, 189, 21, 0.3), rgba(213, 17, 53, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .grid-item.image-gallery:hover::after {
+            opacity: 1;
+        }
+
+        .grid-item.timeline {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .timeline-line {
+    position: absolute;
+    left: 2%;
+    right: 2%;
+    top: 50%;
+    height: 4px;
+    background: linear-gradient(to right, #E4BD15, #D51135);
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+        .timeline-title {
+            color: #E4BD15;
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .timeline-subtitle {
+            color: #cccccc;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .grid-item.timeline-point {
+            background-color: #2a2a2a;
+            border-left: 4px solid #E4BD15;
+            position: relative;
+        }
+
+        .grid-item.timeline-point::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #E4BD15;
+            border-radius: 50%;
+        }
+
+        .grid-item.timeline-point:hover {
+            border-left-color: #D51135;
+            background-color: #3a3a3a;
+        }
+
+        .grid-item.timeline-point:hover::before {
+            background-color: #D51135;
+        }
+
+        .timeline-year {
+            color: #E4BD15;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-event {
+            color: #cccccc;
+            font-size: 0.85rem;
+            line-height: 1.3;
         }
 
         .div1 {
