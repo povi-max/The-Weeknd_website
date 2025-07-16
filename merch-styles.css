@@ -7,7 +7,7 @@
         }
 
         body {
-            font-family: 'Rajdhani', sans-serif;
+            font-family: 'Pridi', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #fff;
             overflow-x: hidden;
@@ -100,7 +100,7 @@
         }
 
         .nav-links a {
-            color: #fff;
+            color: #E4BD15 ;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -175,10 +175,7 @@
             font-size: 4rem;
             font-weight: 900;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #ff6b6b, #fff, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #D51135; 
             animation: shimmer 3s ease-in-out infinite;
         }
 
@@ -200,7 +197,7 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: #D51135;
             color: #000;
             padding: 15px 40px;
             text-decoration: none;
@@ -248,7 +245,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 50px;
-            color: #ff6b6b;
+            color:#D51135 ;
             position: relative;
         }
 
@@ -299,7 +296,7 @@
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(255, 107, 107, 0.2);
-            border-color: #ff6b6b;
+            border-color: #D51135;
         }
 
         .product-image {
@@ -333,7 +330,7 @@
 
         .product-image span {
             font-size: 1.2rem;
-            color: #fff;
+            color: #E4BD15 ;
             z-index: 2;
             position: relative;
         }
@@ -351,25 +348,25 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 10px;
-            color: #fff;
+            color: #E4BD15 ;
         }
 
         .product-price {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #ff6b6b;
+            color:#D51135 ;
             margin-bottom: 15px;
         }
 
         .product-description {
-            color: #ccc;
+            color: #E4BD15 ;
             margin-bottom: 20px;
             line-height: 1.5;
         }
 
         .add-to-cart {
             width: 100%;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: #D51135;
             color: #000;
             border: none;
             padding: 12px 20px;
@@ -401,12 +398,13 @@
             box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
         }
 
-        .footer {
-            background: rgba(0, 0, 0, 0.9);
+        .footer {background: rgba(0, 0, 0, 0.9);
             padding: 40px 0;
             text-align: center;
-            border-top: 2px solid #ff6b6b;
+            border-top: 2px solid ; 
         }
+           
+        
 
         .footer p {
             color: #ccc;
@@ -420,7 +418,7 @@
         }
 
         .social-links a {
-            color: #fff;
+            color: #E4BD15 ;
             font-size: 1.5rem;
             transition: all 0.3s ease;
         }

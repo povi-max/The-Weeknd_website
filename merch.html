@@ -6,38 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Weeknd - Starboy Merch</title>
     <link rel="stylesheet" href="./merch-styles.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <header class="header">
+    <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">STARBOY</div>
-               <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">O nás</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                </ul>
-            </nav>
-            <div class="cart-icon">
+            <div class="logo">XO</div>
+            <ul class="nav-links">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Music">Music</a></li>
+                <li><a href="#Tour">Tour</a></li>
+                <li><a href="#Merch">Merch</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+            <button class="listen-btn" onclick="playMusic()">Listen Now</button>
+              <div class="cart-icon">
                 🛒
                 <span class="cart-count">0</span>
-            </div>
         </div>
-    </header>
+  </nav>
 
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>THE WEEKND</h1>
-            <p>Oficiální Starboy Merch Kolekce</p>
-            <a href="#products" class="cta-button">Prozkoumat kolekci</a>
+            <p>Official Starboy Merch Collection</p>
+            <a href="#products" class="cta-button">Explore the Collection</a>
         </div>
     </section>
 
     <section class="section" id="products">
         <div class="container">
-            <h2 class="section-title">EXKLUZIVNÍ PRODUKTY</h2>
+            <h2 class="section-title">EXCLUSIVE PRODUCTS
+            </h2>
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
@@ -46,25 +47,21 @@
                     <div class="product-info">
                      <h3 class="product-title">Starboy Official Tee</h3>
                      <div class="product-price">890 Kč</div>
-                        <p class="product-description">Černé tričko s ikonickým Starboy logem. Vyrobeno z prémiové
-                            bavlny pro maximální pohodlí.</p>
-                        <button class="add-to-cart" onclick="addToCart('Starboy Official Tee', 890)">Přidat do
-                            košíku</button>
+                        <p class="product-description">Black t-shirt with the iconic Starboy logo. Made from premium cotton for maximum comfort.</p>
+                        <button class="add-to-cart" onclick="addToCart('Starboy Official Tee', 890)">Add to Cart</button>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="./obrazky/neon hoodie 2.png" alt="neon hoodie">
-                    </div>           
+                        <img src="./obrazky/neon hoodie 2.png" alt="neon hoodie"/>
+                    </div>  
                     <div class="product-info">
-                        <h3 class="product-title">Starboy Neon Hoodie</h3>
-                        <div class="product-price">1,490 Kč</div>
-                        <p class="product-description">Tmavá mikina s neonovým designem inspirovaným albem Starboy.
-                            Teplá a stylová.</p>
-                        <button class="add-to-cart" onclick="addToCart('Starboy Neon Hoodie', 1490)">Přidat do
-                            košíku</button>
-                    </div>
+                     <h3 class="product-title">Starboy Neon hoodie</h3>
+                     <div class="product-price">1499 Kč</div>
+                         <p class="product-description">Dark hoodie with a neon design inspired by the Starboy album- warm and stylish.</p> 
+                        <button class="add-to-cart" onclick="addToCart('Starboy Neon Hoodie', 1490)">Add to Cart</button>
+                     </div>
                 </div>
 
                 <div class="product-card">
@@ -74,10 +71,8 @@
                     <div class="product-info">
                         <h3 class="product-title">Starboy Snapback</h3>
                         <div class="product-price">690 Kč</div>
-                        <p class="product-description">Černá kšiltovka s vyšitým Starboy logem. Nastavitelný pásek pro
-                            perfektní posazení.</p>
-                        <button class="add-to-cart" onclick="addToCart('Starboy Snapback', 690)">Přidat do
-                            košíku</button>
+                        <p class="product-description">Stylish black cap with embroided Starboy logo. Adjudtible strap for a perect fit.</p>
+                        <button class="add-to-cart" onclick="addToCart('Starboy Snapback', 690)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -88,10 +83,8 @@
                     <div class="product-info">
                         <h3 class="product-title">Starboy Vinyl Record</h3>
                         <div class="product-price">1,190 Kč</div>
-                        <p class="product-description">Limitovaná edice vinylu alba Starboy. Audiofil kvalita pro pravé
-                            hudební fanoušky.</p>
-                        <button class="add-to-cart" onclick="addToCart('Starboy Vinyl Record', 1190)">Přidat do
-                            košíku</button>
+                        <p class="product-description">Limited edition Starboy vinyl- audiophile quality for true music fans.</p>
+                        <button class="add-to-cart" onclick="addToCart('Starboy Vinyl Record', 1190)">Add to Cart</button>u</button>
                     </div>
                 </div>
 
@@ -102,10 +95,8 @@
                     <div class="product-info">
                         <h3 class="product-title">Starboy Phone Case</h3>
                         <div class="product-price">390 Kč</div>
-                        <p class="product-description">Ochranné pouzdro na telefon s Starboy motivem. Kompatibilní s
-                            většinou modelů.</p>
-                        <button class="add-to-cart" onclick="addToCart('Starboy Phone Case', 390)">Přidat do
-                            košíku</button>
+                        <p class="product-description">Protective phone case with Starboy design, compatible with most models.</p>
+                        <button class="add-to-cart" onclick="addToCart('Starboy Phone Case', 390)">Add to Cart</button>
                     </div>
                 </div>
 
@@ -116,10 +107,8 @@
                     <div class="product-info">
                         <h3 class="product-title">Starboy Backpack</h3>
                         <div class="product-price">1,790 Kč</div>
-                        <p class="product-description">Černý batoh s reflexními prvky v Starboy stylu. Ideální pro školu
-                            i volný čas.</p>
-                        <button class="add-to-cart" onclick="addToCart('Starboy Backpack', 1790)">Přidat do
-                            košíku</button>
+                        <p class="product-description">Black backpack with reflective elements in Starboy style- perfect for school or leisure</p>
+                        <button class="add-to-cart" onclick="addToCart('Starboy Backpack', 1790)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -128,7 +117,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 The Weeknd Official Merch. Všechna práva vyhrazena.</p>
+            <p>&copy; 2025 The Weeknd Official Merch.All rights reserved.</p>
             <div class="social-links">
                 <a href="#">📘</a>
                 <a href="#">📷</a>
