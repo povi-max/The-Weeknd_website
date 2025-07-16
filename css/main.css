@@ -1,156 +1,322 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Pridi', sans-serif;
-    background-color: #D51135;
-    color: white;
-    min-height: 100vh;
-}
+        body {
+            font-family: 'Pridi', sans-serif;
+            background-color: #171616;
+            color: white;
+            min-height: 100vh;
+        }
 
-/* Navigation Bar */
-.navbar {
-    background-color: #171616;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
+        /* Navigation Bar */
+        .navbar {
+            background-color: #171616;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 20px;
+        }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            align-items: flex-start;
+        }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: flex-end;
+        }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            align-items: flex-end;
+        }
 
-.nav-links a:hover {
-    color: #D51135;
-}
+        .nav-links a:hover {
+            color: #D51135;
+        }
 
-.listen-btn {
-    background-color: #fff;
-    color: #171616;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+        .listen-btn {
+            background-color: #fff;
+            color: #171616;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.listen-btn:hover {
-    background-color: black;
-    color: #fff;
-    transform: translateY(-2px);
-}
+        .listen-btn:hover {
+            background-color: black;
+            color: #fff;
+            transform: translateY(-2px);
+        }
 
-/* Main Content */
-.main-content {
-    margin-top: 80px;
-    min-height: calc(100vh - 80px);
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-}
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-.content-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-    width: 100%;
-}
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
 
-.text-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.artist-name {
-    font-size: 6rem;
-    font-weight: bold;
-    color: #E4BD15;
-    margin-bottom: 20px;
-    letter-spacing: -2px;
-}
+        .artist-name {
+            font-size: 10rem;
+            font-weight: bold;
+            color: #E4BD15;
+            margin-bottom: 20px;
+            letter-spacing: -4px;
+        }
 
-.subtitle {
-    font-size: 1.5rem;
-    color: #E4BD15;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
+        .subtitle {
+            font-size: 1.5rem;
+            color: #E4BD15;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
 
-.image-section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-}
+        .image-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-.image-container {
-    position: relative;
-    width: 100%;
-    height: 700px;
-    overflow: hidden;
-}
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+        }
 
-.artist-image {
-    width: 120%;
-    max-width: 600px;
-    height: 700px;
-    object-fit: cover;
-    object-position: center;
-}
+        .artist-image {
+            width: 120%;
+            max-width: 600px;
+            height: 700px;
+            object-fit: cover;
+            object-position: center;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .content-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
+        /* Artist Info Section */
+        .artist-info {
+            background-color: #171616;
+            padding: 100px 20px;
+            min-height: 100vh;
+        }
 
-    .artist-name {
-        font-size: 4rem;
-    }
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 80vh;
+        }
 
-    .nav-links {
-        display: none;
-    }
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #171616;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
 
-    .artist-image {
-        height: 400px;
-    }
-}
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 8px;
+            height: 100%;
+        }
+
+        .grid-item {
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            background-color: #3a3a3a;
+        }
+
+        .grid-item h3 {
+            color: ##171616;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .grid-item p {
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .grid-item.stats {
+            background-color: #171616;
+        }
+
+        .grid-item.stats h3 {
+            color: white;
+        }
+
+        .grid-item.stats p {
+            color: white;
+            font-weight: bold;
+        }
+
+        .grid-item.biography {
+            background-color: #171616;
+            color: #171616;
+        }
+
+        .grid-item.biography h3 {
+            color: #171616;
+        }
+
+        .grid-item.biography p {
+            color: #171616;
+        }
+
+        .grid-item.quote {
+            background: linear-gradient(135deg, #D51135, #E4BD15);
+            font-style: italic;
+        }
+
+        .grid-item.quote p {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .div1 {
+            grid-column: span 2 / span 2;
+        }
+        .div2 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 1;
+            grid-row-start: 2;
+        }
+        .div3 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 2;
+        }
+        .div4 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 3;
+            grid-row-start: 2;
+        }
+        .div5 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 4;
+            grid-row-start: 2;
+        }
+        .div6 {
+            grid-row: span 2 / span 2;
+            grid-column-start: 5;
+            grid-row-start: 2;
+        }
+        .div7 {
+            grid-column: span 5 / span 5;
+            grid-column-start: 1;
+            grid-row-start: 4;
+        }
+        .div8 {
+            grid-column: span 3 / span 3;
+            grid-column-start: 3;
+            grid-row-start: 1;
+        }
+        .div9 {
+            grid-row-start: 5;
+        }
+        .div10 {
+            grid-row-start: 5;
+        }
+        .div11 {
+            grid-row-start: 5;
+        }
+        .div12 {
+            grid-row-start: 5;
+        }
+        .div13 {
+            grid-row-start: 5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .artist-name {
+                font-size: 4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .artist-image {
+                height: 400px;
+            }
+
+            .parent {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(13, 200px);
+                gap: 10px;
+            }
+
+            .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div11, .div12, .div13 {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
