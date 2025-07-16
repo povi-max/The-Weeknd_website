@@ -184,11 +184,6 @@
             overflow: hidden;
         }
 
-        .grid-item:hover {
-            transform: translateY(-5px);
-            background-color: #3a3a3a;
-        }
-
         .grid-item h3 {
             color: #E4BD15;
             margin-bottom: 10px;
@@ -261,10 +256,6 @@
             background: linear-gradient(45deg, rgba(228, 189, 21, 0.3), rgba(213, 17, 53, 0.3));
             opacity: 0;
             transition: opacity 0.3s ease;
-        }
-
-        .grid-item.image-gallery:hover::after {
-            opacity: 1;
         }
 
         .grid-item.timeline {
@@ -444,10 +435,6 @@
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .contact-category:hover {
-            transform: translateY(-5px);
-            background-color: #3a3a3a;
-        }
 
         .contact-category h3 {
             color: #E4BD15;
@@ -478,7 +465,11 @@
             max-width: 250px;
         }
 
-    
+         .social-link:hover {
+            background-color: #D51135;
+            color: white;
+            transform: translateY(-2px);
+        }
 
         .social-link.youtube:hover {
             background-color: #FF0000;
@@ -502,17 +493,11 @@
         }
 
         .contact-info {
-            background-color: #D51135;
+            background-color: #2a2a2a;
             border-radius: 24px;
             padding: 30px;
             text-align: center;
             color: white;
-        }
-
-        .contact-info:hover {
-            background-color: #D51135;
-            color: white;
-            transform: translateY(-2px);
         }
 
         .contact-info h3 {
