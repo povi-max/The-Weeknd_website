@@ -149,6 +149,12 @@
             height: 80vh;
         }
 
+        @media (max-width: 768px) {
+            .info-container {
+                height: auto;
+            }
+        }
+
         .section-title {
             text-align: center;
             font-size: 3rem;
@@ -500,11 +506,17 @@
         }
 
         .contact-info {
-            background: linear-gradient(135deg, #D51135, #E4BD15);
+            background-color: #D51135;
             border-radius: 24px;
             padding: 30px;
             text-align: center;
             color: white;
+        }
+
+        .contact-info:hover {
+            background-color: #D51135;
+            color: white;
+            transform: translateY(-2px);
         }
 
         .contact-info h3 {
