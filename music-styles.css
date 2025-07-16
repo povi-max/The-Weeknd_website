@@ -1,0 +1,163 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 40px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.album {
+  display: inline-block;
+  margin: 60px 20px 0 20px;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-align: center;
+  margin-bottom: 0.1px;
+  margin-top: 60px;
+}
+
+.album .title {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.album:hover .title {
+  color: #D51135;
+}
+
+.album img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.6s;
+  margin: 0 auto;
+  margin-top: 0;
+} 
+
+.album .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.album:hover .hover {
+  opacity: 1;
+}
+
+.album:hover .default {
+  opacity: 0;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 1px; 
+}
+
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pridi', sans-serif;
+            background-color: #171616;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #171616;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            align-items: flex-start;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: flex-end;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            align-items: flex-end;
+        }
+
+        .nav-links a:hover {
+            color: #D51135;
+        }
+
+       .listen-btn {
+            background-color: black;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 24px;
+            border-color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .listen-btn:hover {
+            background-color: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+@media (max-width: 768px) {
+  .album {
+    flex: 0 0 100%;
+  }
+
+  .body {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
