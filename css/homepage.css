@@ -1,5 +1,5 @@
-        * {
-            margin: 1;
+* {
+            margin: 0.5;
             padding: 0;
             box-sizing: border-box;
         }
@@ -403,6 +403,135 @@
             grid-row-start: 5;
         }
 
+        /* Contact Section */
+        .contact-section {
+            background-color: #171616;
+            padding: 100px 20px;
+            min-height: 100vh;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #E4BD15;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .contact-category {
+            background-color: #2a2a2a;
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .contact-category:hover {
+            transform: translateY(-5px);
+            background-color: #3a3a3a;
+        }
+
+        .contact-category h3 {
+            color: #E4BD15;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #cccccc;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background-color: #1a1a1a;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .social-link:hover {
+            background-color: #D51135;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .social-link.youtube:hover {
+            background-color: #FF0000;
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+        }
+
+        .social-link.twitter:hover {
+            background-color: #1DA1F2;
+        }
+
+        .social-link.facebook:hover {
+            background-color: #4267B2;
+        }
+
+        .social-link.snapchat:hover {
+            background-color: #FFFC00;
+            color: black;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #D51135, #E4BD15);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .contact-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .content-container {
@@ -436,5 +565,22 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .contact-category h3 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.5rem;
             }
         }
