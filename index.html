@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Weeknd - Official Website</title>
     <link rel="stylesheet" href="css/main.css">
-
+</head>
 <body>
     <div class="background-animation"></div>
     
@@ -30,19 +30,73 @@
                 <p class="subtitle">AFTER HOURS TILL DAWN</p>
             </div>
             <div class="image-section">
-                <img src="bezpozadi.png" 
-                     alt="The Weeknd" 
+                <img src="bezpozadi.png"
+                     alt="The Weeknd"
                      class="artist-image">
             </div>
         </div>
     </main>
 
-    <script>
-        function playMusic() {
-            alert('Redirecting to music streaming platform...');
-            // Zde by byla implementace pro přehrávání hudby
-        }
+    <section class="artist-info">
+        <div class="info-container">
+            <h2 class="section-title">ABOUT THE ARTIST</h2>
+            <div class="parent">
+                <div class="div1 grid-item biography">
+                    <h3>Biography</h3>
+                    <p>Born Abel Makkonen Tesfaye in Toronto, The Weeknd revolutionized modern R&B with his dark, atmospheric sound.</p>
+                </div>
+                <div class="div2 grid-item stats">
+                    <h3>Albums</h3>
+                    <p>5 Studio Albums<br>100M+ Records Sold</p>
+                </div>
+                <div class="div3 grid-item stats">
+                    <h3>Awards</h3>
+                    <p>4 Grammy Awards<br>11 Juno Awards</p>
+                </div>
+                <div class="div4 grid-item">
+                    <h3>Genre</h3>
+                    <p>Alternative R&B<br>Pop<br>Dark Pop</p>
+                </div>
+                <div class="div5 grid-item">
+                    <h3>Origin</h3>
+                    <p>Toronto, Canada<br>Ethiopian Heritage</p>
+                </div>
+                <div class="div6 grid-item stats">
+                    <h3>Streaming</h3>
+                    <p>100B+ Streams<br>Spotify Records</p>
+                </div>
+                <div class="div7 grid-item quote">
+                    <p>"I'm not a party person. I'm more of a lonely person who makes music about being alone."</p>
+                </div>
+                <div class="div8 grid-item">
+                    <h3>Latest Album</h3>
+                    <p>Dawn FM (2022)<br>Concept Album<br>80s Inspired</p>
+                </div>
+                <div class="div9 grid-item">
+                    <h3>Debut</h3>
+                    <p>House of Balloons<br>2011</p>
+                </div>
+                <div class="div10 grid-item">
+                    <h3>Collaborations</h3>
+                    <p>Daft Punk<br>Ariana Grande</p>
+                </div>
+                <div class="div11 grid-item">
+                    <h3>Record Label</h3>
+                    <p>XO<br>Republic Records</p>
+                </div>
+                <div class="div12 grid-item">
+                    <h3>Super Bowl</h3>
+                    <p>Halftime Show<br>2021</p>
+                </div>
+                <div class="div13 grid-item">
+                    <h3>Acting</h3>
+                    <p>Uncut Gems<br>The Idol</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -56,18 +110,9 @@
             });
         });
 
-        // Add some interactive effects
-        document.addEventListener('mousemove', function(e) {
-            const cursor = document.querySelector('.artist-name');
-            const rect = cursor.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            cursor.style.textShadow = `
-                ${x/10}px ${y/10}px 6px rgba(0,0,0,0.5),
-                0 0 20px rgba(255,255,0,0.3)
-            `;
-        });
+        function playMusic() {
+            alert('Music player would open here!');
+        }
     </script>
 </body>
 </html>
