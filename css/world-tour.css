@@ -28,7 +28,9 @@ body {
             font-weight: bold;
             color: white;
             align-items: flex-start;
-        }
+}
+
+        
 
         .nav-links {
             display: flex;
@@ -42,6 +44,7 @@ body {
             text-decoration: none;
             transition: color 0.3s;
             align-items: flex-end;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
@@ -128,7 +131,7 @@ body {
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   font-weight: bold;
 }
 
@@ -141,7 +144,7 @@ body {
 
 .tour-poster-section {
     width: 100vw;
-    height: 100vh;     /* Zajistí, že obrázek je vysoký jako obrazovka */
+    height: 100vh;     
     overflow: hidden;
     position: relative;
 }
@@ -149,7 +152,7 @@ body {
 .tour-poster {
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* Udrží proporce obrázku a pokryje celou plochu */
+    object-fit: cover; 
     display: block;
 }
 
