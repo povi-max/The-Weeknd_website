@@ -131,7 +131,7 @@
         .artist-image {
             width: 120%;
             max-width: 600px;
-            height: 700px;
+            height: 87vh;
             object-fit: cover;
             object-position: center;
         }
@@ -182,11 +182,6 @@
             text-align: center;
             transition: transform 0.3s ease, background-color 0.3s ease;
             overflow: hidden;
-        }
-
-        .grid-item:hover {
-            transform: translateY(-5px);
-            background-color: #3a3a3a;
         }
 
         .grid-item h3 {
@@ -263,10 +258,6 @@
             transition: opacity 0.3s ease;
         }
 
-        .grid-item.image-gallery:hover::after {
-            opacity: 1;
-        }
-
         .grid-item.timeline {
             background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
             position: relative;
@@ -312,7 +303,7 @@
             transform: translateX(-50%);
             width: 3px;
             height: 45px;
-            background-color: #E4BD15;
+            background-color: #D51135;
         }
 
         /* Kruhový bod na konci spojovací linky */
@@ -324,22 +315,10 @@
             transform: translateX(-50%);
             width: 10px;
             height: 10px;
-            background-color: #E4BD15;
+            background-color: #D51135;
             border-radius: 50%;
             border: 2px solid #171616;
             z-index: 2;
-        }
-
-        .grid-item.timeline-point:hover {
-            background-color: #3a3a3a;
-        }
-
-        .grid-item.timeline-point:hover::before {
-            background-color: #D51135;
-        }
-
-        .grid-item.timeline-point:hover::after {
-            background-color: #D51135;
         }
 
         .timeline-year {
@@ -444,10 +423,6 @@
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .contact-category:hover {
-            transform: translateY(-5px);
-            background-color: #3a3a3a;
-        }
 
         .contact-category h3 {
             color: #E4BD15;
@@ -478,7 +453,7 @@
             max-width: 250px;
         }
 
-        .social-link:hover {
+         .social-link:hover {
             background-color: #D51135;
             color: white;
             transform: translateY(-2px);
@@ -505,44 +480,45 @@
             color: black;
         }
 
-        .contact-info {
-            background-color: #D51135;
-            border-radius: 24px;
-            padding: 30px;
-            text-align: center;
-            color: white;
-        }
+        /* Upravené styly pro contact info sekci */
+.contact-info {
+    background-color: #2a2a2a;
+    border-radius: 30px;
+    padding: 30px;
+    text-align: flex;
+    color: white;
+}
 
-        .contact-info:hover {
-            background-color: #D51135;
-            color: white;
-            transform: translateY(-2px);
-        }
+.contact-info h3 {
+    color: #E4BD15;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
 
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
+/* Nové styly pro contact info políčka */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
 
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-
-        .contact-detail:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact-icon {
-            font-size: 1.2rem;
-            width: 20px;
-            text-align: center;
-        }
+.contact-link {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 5px;
+    color: #cccccc;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background-color: #1a1a1a;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -589,7 +565,7 @@
             }
 
             .contact-category h3 {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
 
             .contact-info h3 {
