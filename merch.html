@@ -14,16 +14,21 @@
         <div class="nav-container">
             <div class="logo">XO</div>
             <ul class="nav-links">
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Music">Music</a></li>
-                <li><a href="#Tour">Tour</a></li>
-                <li><a href="#Merch">Merch</a></li>
-                <li><a href="#Contact">Contact</a></li>
+             <li><a href="./index.html">HOME</a></li>
+                <li><a href="./music.html">MUSIC</a></li>
+                <li><a href="./world-tour.html">TOUR</a></li>
+                <li><a href="./merch.html">MERCH</a></li>
+                <li><a href="index.html#Contact">CONTACT</a></li>
             </ul>
-            <button class="listen-btn" onclick="playMusic()">Listen Now</button>
-              <div class="cart-icon">
+            <div class="cart-icon">
                 🛒
                 <span class="cart-count">0</span>
+           </ul>
+  <div class="cart-total" style="padding:0 10px 10px 10px; font-weight:bold; border-top:1px solid #eee;">Total: </div>
+  <a href="kosik.html">
+  <button class="checkout-btn" style="width:90%; margin:0 5% 10px 5%; padding:8px; background:#4CAF50; border:none; color:#fff; cursor:pointer; font-size:14px; border-radius:3px;">Checkout</button>
+  </a>
+</div>
         </div>
   </nav>
 
@@ -46,7 +51,7 @@
                     </div>
                     <div class="product-info">
                      <h3 class="product-title">Starboy Official Tee</h3>
-                     <div class="product-price">890 Kč</div>
+                     <div class="product-price">34.99 $</div>
                         <p class="product-description">Black t-shirt with the iconic Starboy logo. Made from premium cotton for maximum comfort.</p>
                         <button class="add-to-cart" onclick="addToCart('Starboy Official Tee', 890)">Add to Cart</button>
                     </div>
@@ -58,7 +63,7 @@
                     </div>  
                     <div class="product-info">
                      <h3 class="product-title">Starboy Neon hoodie</h3>
-                     <div class="product-price">1499 Kč</div>
+                     <div class="product-price">64.99 $</div>
                          <p class="product-description">Dark hoodie with a neon design inspired by the Starboy album- warm and stylish.</p> 
                         <button class="add-to-cart" onclick="addToCart('Starboy Neon Hoodie', 1490)">Add to Cart</button>
                      </div>
@@ -70,7 +75,7 @@
                         </div>
                     <div class="product-info">
                         <h3 class="product-title">Starboy Snapback</h3>
-                        <div class="product-price">690 Kč</div>
+                        <div class="product-price">29.99 $</div>
                         <p class="product-description">Stylish black cap with embroided Starboy logo. Adjudtible strap for a perect fit.</p>
                         <button class="add-to-cart" onclick="addToCart('Starboy Snapback', 690)">Add to Cart</button>
                     </div>
@@ -82,9 +87,9 @@
                         </div>
                     <div class="product-info">
                         <h3 class="product-title">Starboy Vinyl Record</h3>
-                        <div class="product-price">1,190 Kč</div>
+                        <div class="product-price">49.99 $</div>
                         <p class="product-description">Limited edition Starboy vinyl- audiophile quality for true music fans.</p>
-                        <button class="add-to-cart" onclick="addToCart('Starboy Vinyl Record', 1190)">Add to Cart</button>u</button>
+                        <button class="add-to-cart" onclick="addToCart('Starboy Vinyl Record', 1190)">Add to Cart</button></button>
                     </div>
                 </div>
 
@@ -94,7 +99,7 @@
                         </div>
                     <div class="product-info">
                         <h3 class="product-title">Starboy Phone Case</h3>
-                        <div class="product-price">390 Kč</div>
+                        <div class="product-price">15.99 $</div>
                         <p class="product-description">Protective phone case with Starboy design, compatible with most models.</p>
                         <button class="add-to-cart" onclick="addToCart('Starboy Phone Case', 390)">Add to Cart</button>
                     </div>
@@ -106,7 +111,7 @@
                         </div>
                     <div class="product-info">
                         <h3 class="product-title">Starboy Backpack</h3>
-                        <div class="product-price">1,790 Kč</div>
+                        <div class="product-price">69.99 $</div>
                         <p class="product-description">Black backpack with reflective elements in Starboy style- perfect for school or leisure</p>
                         <button class="add-to-cart" onclick="addToCart('Starboy Backpack', 1790)">Add to Cart</button>
                     </div>
@@ -119,29 +124,33 @@
         <div class="container">
             <p>&copy; 2025 The Weeknd Official Merch.All rights reserved.</p>
             <div class="social-links">
-                <a href="#">📘</a>
-                <a href="#">📷</a>
-                <a href="#">🐦</a>
-                <a href="#">🎵</a>
             </div>
         </div>
     </footer>
 
     <script>
-        let cart = [];
-        let cartCount = 0;
+     // Načtení košíku z localStorage při načtení stránky
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartCount = cart.length;
+
+        // Aktualizace zobrazení košíku při načtení stránky
+        updateCartDisplay();
 
         function addToCart(productName, price) {
             cart.push({ name: productName, price: price });
             cartCount++;
+            
+            // Uložení do localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
             updateCartDisplay();
-
+            
             // Animace pro feedback
             const button = event.target;
             const originalText = button.textContent;
             button.textContent = 'Přidáno! ✓';
             button.style.background = '#4CAF50';
-
+            
             setTimeout(() => {
                 button.textContent = originalText;
                 button.style.background = 'linear-gradient(45deg, #ff6b6b, #ff8e8e)';
@@ -157,7 +166,16 @@
             } else {
                 cartCountElement.style.display = 'none';
             }
+            
+            // Aktualizace celkové ceny v košíku
+            const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+            const cartTotalElement = document.querySelector('.cart-total');
+            if (cartTotalElement) {
+                cartTotalElement.textContent = `Total: $${Math.ceil(totalPrice / 22)}`;
+            }
         }
+
+  
 
         // Smooth scrolling pro navigaci
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Weeknd - Starboy Merch</title>
+    <link rel="stylesheet" href="./merch-styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(45deg, #ff0000, #8b0000);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100px);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cart-summary {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-items {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cart-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cart-item:hover::before {
+            left: 100%;
+        }
+
+        .cart-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 0, 0, 0.2);
+            border-color: rgba(255, 0, 0, 0.3);
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff0000, #8b0000);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .item-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 8px 15px;
+        }
+
+        .quantity-btn {
+            background: linear-gradient(45deg, #ff0000, #8b0000);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: bold;
+        }
+
+        .quantity-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        }
+
+        .quantity-btn:active {
+            transform: scale(0.95);
+        }
+
+        .quantity {
+            min-width: 30px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .remove-btn {
+            background: linear-gradient(45deg, #8b0000, #ff0000);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .remove-btn:hover {
+            background: linear-gradient(45deg, #ff0000, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3);
+        }
+
+        .cart-total {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .checkout-section {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff0000, #8b0000);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 200px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px ;
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #333, #555);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(45deg, #555, #777);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-cart-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .item-controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .checkout-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">XO</div>
+            <ul class="nav-links">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Music">Music</a></li>
+                <li><a href="#Tour">Tour</a></li>
+                <li><a href="#Merch">Merch</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+                </ul>
+                <div class="cart-total" id="header-price" style="padding:0 10px 10px 10px; font-weight:bold; border-top:1px solid #eee;">
+                    </div>
+                <button class="checkout-btn"
+                    style="width:90%; margin:0 5% 10px 5%; padding:8px; background:#4CAF50; border:none; color:#fff; cursor:pointer; font-size:14px; border-radius:3px;">Checkout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="cart-container">
+
+    </div>
+
+
+
+    <header>
+        <div class="container">
+            <h1>THE WEEKND</h1>
+            <p class="subtitle">OFFICIAL STARBOY MERCH STORE - THE CART</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="cart-summary">
+            <div id="cart-content">
+                <!-- Košík bude načten zde -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The Weeknd Official Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Funkce pro zobrazení košíku na stránce
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-container');
+
+            if (!cartContainer) {
+                console.error('Element s ID "cart-container" nebyl nalezen');
+                return;
+            }
+
+            // Vymazání předchozího obsahu
+            cartContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `
+            <div class="empty-cart">
+                <h3>The Cart is empty!</h3>
+                <p>Add some products to the Cart</p>
+            </div>
+        `;
+                return;
+            }
+
+            // Vytvoření HTML pro košík
+            let cartHTML = '<div class="cart-items">';
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                totalPrice += item.price;
+                cartHTML += `
+            <div class="cart-item">
+                <div class="item-info">
+                    <h4>${item.name}</h4>
+                    <span class="item-price">${item.price} Kč</span>
+                </div>
+                <button class="remove-item" onclick="removeFromCart(${index})">
+                    Odebrat
+                </button>
+            </div>
+        `;
+            });
+
+            cartHTML += `
+        </div>
+        <div class="cart-summary">
+            <div class="total-price">
+                <strong>Celkem: ${totalPrice} Kč</strong>
+            </div>
+            <div class="cart-actions">
+                <button class="clear-cart-btn" onclick="clearCart()">Delete Cart</button>
+                <button class="checkout-btn" onclick="checkout()">Order</button>
+            </div>
+        </div>
+    `;
+
+            cartContainer.innerHTML = cartHTML;
+        }
+    </script>
+    <script type="text/javascript">
+        // Simulace dat z košíku (místo localStorage)
+        let cartData = [
+            {
+                id: 1,
+                name: "Starboy Official Tee",
+                price: 34.99,
+                quantity: 1,
+                image: "<img class='order-image' src='./obrazky/starboy tee 2.png'>"
+            }
+        ];
+
+        
+        
+
+        function renderCart() {
+            const cartDataFromLocaleStorage = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContent = document.getElementById('cart-content');
+            const totalPriceContent = document.getElementById('header-price');
+
+            if (cartData.length === 0) {
+                cartContent.innerHTML = `
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <h2>Your Cart is empty!</h2>
+                        <p>Add some products to the Cart</p>
+                        <button class="btn" onclick="goToStore()">Continue</button>
+                    </div>
+                `;
+                return;
+            }
+
+            let total = 0;
+            let cartHTML = '<div class="cart-items">';
+
+            cartData.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                cartHTML += `
+                    <div class="cart-item">
+                        <div class="item-image">${item.image}</div>
+                        <div class="item-details">
+                            <div class="item-name">${item.name}</div>
+                            <div class="item-price">$${item.price.toFixed(2)}</div>
+                            <div class="item-controls">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                    <span class="quantity">${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                                </div>
+                                <button class="remove-btn" onclick="removeItem(${item.id})">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartHTML += '</div>';
+            cartHTML += `<div class="cart-total">Final Price: $${total.toFixed(2)}</div>`;
+            cartHTML += `
+                <div class="checkout-section">
+                    <button class="btn" onclick="checkout()">Order</button>
+                    <button class="btn btn-secondary" onclick="goToStore()">Continue</button>
+                    <button class="btn btn-secondary" onclick="clearCart()">Delete</button>
+                </div>
+            `;
+
+            cartContent.innerHTML = cartHTML;
+            totalPriceContent.innerHTML = `Final price: $${total.toFixed(2)}`;
+        }
+
+        function updateQuantity(id, change) {
+            const item = cartData.find(item => item.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeItem(id);
+                } else {
+                    renderCart();
+                }
+            }
+        }
+
+        function removeItem(id) {
+            cartData = cartData.filter(item => item.id !== id);
+            renderCart();
+        }
+
+        function clearCart() {
+            if (confirm('Do you really want to empty the Cart?')) {
+                cartData = [];
+                renderCart();
+            }
+        }
+
+        function checkout() {
+            if (cartData.length === 0) {
+                alert('The Cart is empty!');
+                return;
+            }
+
+            alert('Redirecting to the payment gateway...\n(This is only demo!)');
+        }
+
+        function goToStore() {
+            window.location.href = "./merch.html";
+        }
+
+        // Inicializace stránky
+        document.addEventListener('DOMContentLoaded', function () {
+            renderCart();
+        });
+    </script>
+</body>
+
+</html>
